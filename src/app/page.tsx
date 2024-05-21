@@ -88,8 +88,9 @@ export default function Home() {
 	const generateText = () => {
 		const part1 = Math.random() < 0.5 ? "は" : "ポ";
 		const part2 = Math.random() < 0.5 ? "は" : "ポ";
-		const part3 = Math.random() < 0.5 ? "はま寿司" : "ポポヤシ";
-		setText(`${part1}！${part2}！${part3}‼️`);
+		const part3 = Math.random() < 0.5 ? "はま" : "ポポ";
+		const part4 = Math.random() < 0.5 ? "寿司" : "ヤシ";
+		setText(`${part1}！${part2}！${part3}${part4}‼️`);
 		setPushed(true);
 	};
 	return (
