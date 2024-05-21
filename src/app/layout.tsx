@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: "はま寿司 or ポポヤシ",
 	description: "はま寿司なのか、ポポヤシなのか",
+	openGraph: {
+		title: "はま寿司 or ポポヤシ",
+		description: "はま寿司なのか、ポポヤシなのか",
+	},
 };
 
 export default function RootLayout({
