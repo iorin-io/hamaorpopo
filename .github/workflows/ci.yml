@@ -1,0 +1,41 @@
+name: CI
+on:
+  push:
+    paths-ignore:
+      - "**/*.md"
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+      - run: npm install
+      - run: npx prettier . --check
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+      - run: npm install
+      - run: npx eslint .
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+      - run: npm install
+      - name: Build
+        env:
+          NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN: ${{ secrets.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN }}
+          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.NEXT_PUBLIC_MICROCMS_API_KEY }}
+        run: npm run build
