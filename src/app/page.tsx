@@ -61,8 +61,9 @@ const Button = styled.button`
 
 const textStyle = css({
   margin: "20px",
-  fontSize: "3rem",
+  fontSize: "clamp(1rem, 10vw, 3rem)",
   color: "#333",
+  whiteSpace: "nowrap",
 });
 
 const tweetButton = css({
