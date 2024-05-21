@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://hamaorpopo.iorin.io"),
 	title: "はま寿司 or ポポヤシ",
 	description: "はま寿司なのか、ポポヤシなのか",
 	openGraph: {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 		description: "はま寿司なのか、ポポヤシなのか",
 	},
 	twitter: {
-		card: "summary",
+		card: "summary_large_image",
 		title: "はま寿司 or ポポヤシ",
 		description: "はま寿司なのか、ポポヤシなのか",
 	},
