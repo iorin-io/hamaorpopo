@@ -35,7 +35,4 @@ jobs:
           cache: "npm"
       - run: npm install
       - name: Build
-        env:
-          NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN: ${{ secrets.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN }}
-          NEXT_PUBLIC_MICROCMS_API_KEY: ${{ secrets.NEXT_PUBLIC_MICROCMS_API_KEY }}
         run: npm run build
